@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+    >
+
+    <title>English Learning Assistant</title>
+
+    <meta
+        name="description"
+        content="English Learning Assistant"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <!-- =========================
+         Loading
+    ========================== -->
+
+    <div
+        id="loadingOverlay"
+        class="loading-overlay active"
+    >
+
+        <div class="loading-card">
+
+            <div class="loading-spinner"></div>
+
+            <h2>
+                English Learning Assistant
+            </h2>
+
+            <p>
+                Loading...
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         Main App
+    ========================== -->
+
+    <div
+        id="app"
+        class="app-container"
+    >
+
+        <!-- =========================
+             Header
+        ========================== -->
+
+        <header class="top-header">
+
+            <div class="header-content">
+
+                <h1>
+                    English Learning Assistant
+                </h1>
+
+                <p class="subtitle">
+                    Word / Phrase / Grammar
+                </p>
+
+            </div>
+
+        </header>
+
+        <!-- =========================
+             Search Card
+        ========================== -->
+
+        <section class="search-section">
+
+            <div class="search-card">
+
+                <div class="search-box">
+
+                    <input
+                        id="searchInput"
+                        type="text"
+                        autocomplete="off"
+                        placeholder="Enter a word, phrase or grammar..."
+                    >
+
+                    <button
+                        id="searchButton"
+                        type="button"
+                    >
+                        Search
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             History + Favorite
+        ========================== -->
+
+        <section class="shortcut-section">
+
+            <div class="panel-grid">
+
+                <!-- Recent -->
+
+                <div class="panel-card">
+
+                    <div class="panel-header">
+
+                        <h2>
+                            Recent History
+                        </h2>
+
+                        <button
+                            id="clearHistoryButton"
+                            class="text-button"
+                            type="button"
+                        >
+                            Clear
+                        </button>
+
+                    </div>
+
+                    <div
+                        id="historyContainer"
+                        class="tag-container"
+                    >
+                    </div>
+
+                </div>
+
+                <!-- Favorite -->
+
+                <div class="panel-card">
+
+                    <div class="panel-header">
+
+                        <h2>
+                            Favorite
+                        </h2>
+
+                        <button
+                            id="clearFavoriteButton"
+                            class="text-button"
+                            type="button"
+                        >
+                            Clear
+                        </button>
+
+                    </div>
+
+                    <div
+                        id="favoriteContainer"
+                        class="tag-container"
+                    >
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             Result
+        ========================== -->
+
+        <main
+            id="resultContainer"
+            class="result-section"
+        >
+
+            <section
+                id="welcomeCard"
+                class="result-card welcome-card"
+            >
+
+                <div class="card-title">
+
+                    <h2>
+                        Welcome
+                    </h2>
+
+                </div>
+
+                <div class="card-body">
+
+                    <p>
+                        Search any English word, phrase or grammar.
+                    </p>
+
+                </div>
+
+            </section>
+                        <!-- =========================
+                 Dynamic Result Card
+            ========================== -->
+
+            <section
+                id="resultCard"
+                class="result-card hidden"
+            >
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span
+                            id="resultType"
+                            class="result-badge"
+                        >
+                        </span>
+
+                        <h2
+                            id="resultTitle"
+                            class="result-title"
+                        >
+                        </h2>
+
+                    </div>
+
+                    <button
+                        id="favoriteButton"
+                        class="favorite-button"
+                        type="button"
+                        title="Favorite"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+                <div
+                    id="resultContent"
+                    class="result-content"
+                >
+                </div>
+
+            </section>
+
+            <!-- =========================
+                 Error Card
+            ========================== -->
+
+            <section
+                id="errorCard"
+                class="result-card hidden"
+            >
+
+                <div class="card-title">
+
+                    <h2>
+                        No Result
+                    </h2>
+
+                </div>
+
+                <div class="card-body">
+
+                    <p id="errorMessage">
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- =========================
+         JavaScript
+    ========================== -->
+
+    <script src="core.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
